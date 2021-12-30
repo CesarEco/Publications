@@ -1,6 +1,5 @@
-## This is the code for the manuscript "Habitat loss shapes the structure,
-##stability and the role of species in tropical mutualistic networks"
-##By Fernando C�sar Gon�alves Bonfim, Pavel Dodonov and Eliana Cazetta##
+## This is the code for the manuscript "Habitat loss shapes the structure and species roles in tropical mutualistic networks"
+##By Fernando César Gonçalves Bonfim, Pavel Dodonov and Eliana Cazetta##
 ##E-mail: fernandouesb@gmail.com##
 
 ##Load your library
@@ -67,7 +66,7 @@ plot(resid(nodgam))
 
 #Body mass( mean)
 bodygam<-gam(body_mass ~ s(sam_eff, k= 3, fx = FALSE), data=dados , family=gaussian, na.action="na.fail")
-summary(bodygam)##N�o significativo
+summary(bodygam)##Não significativo
 plot(resid(bodygam)) 
 
 #Bill width
@@ -270,10 +269,10 @@ for(i in 1:ncol(dados.Fc)) { ### Vai repetir o que os comandos definindo i=1, i=
                     start=grid.pow, algorithm = "brute-force")  
   mod.temp <- gnls(resid.np ~ a*(y.temp^b), control=gnlsControl(nlsTol=100), start=coef(initial.pow),data=dados, na.action = "na.fail") ### ajusta o modelo, pra coluna selecionada como y.temp
   result.nbp[[i]] <- mod.temp ### coloca o resultado na lista
-  names(result.nbp)[i] <- name.temp ### dá o nome apropriado
+  names(result.nbp)[i] <- name.temp ### dÃ¡ o nome apropriado
   shapiro.nbp[[i]] <- shapiro.test(resid(mod.temp)) ### coloca o resultado do shapiro
-  names(shapiro.nbp)[i] <- name.temp ### dá o nome apropriado
-  print(i) # coloca na tela quantas iterações já foram (talvez não funcione em RStudio)
+  names(shapiro.nbp)[i] <- name.temp ### dÃ¡ o nome apropriado
+  print(i) # coloca na tela quantas iteraÃ§Ãµes jÃ¡ foram (talvez nÃ£o funcione em RStudio)
 }
 
 AICctab(result.robp, nobs=25, base=T, weights=T, logLik=T)
@@ -969,7 +968,7 @@ for(i in 1:ncol(dados.Fc)) {
   names(result.billpi)[i] <- name.temp
   shapiro.billpi[[i]] <- shapiro.test(resid(mod.temp.2))
   names(shapiro.billpi)[i] <- name.temp
-  print(i) # coloca na tela quantas iterações já foram (talvez não funcione em RStudio)
+  print(i) # coloca na tela quantas iteraÃ§Ãµes jÃ¡ foram (talvez nÃ£o funcione em RStudio)
 }
 
 model.sel(result.billpi)
