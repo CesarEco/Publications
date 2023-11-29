@@ -39,7 +39,7 @@ X = SXY %>%
 X$count_effort <- log(X$count_effort)
 str(X)
 
-Y=as.matrix(SXY[,75:147])
+Y=as.matrix(SXY[,74:140])
 dim(Y)
 
 # Check that the data looks as it should!
